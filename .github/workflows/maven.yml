@@ -43,6 +43,6 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
-        script: sudo systemctl restart ssh-example
+        script: echo ${{ secrets.PASSWORD }} | sudo -S systemctl restart ssh-example
         
         
