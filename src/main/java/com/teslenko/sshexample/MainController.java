@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class MainController {
 	@GetMapping("/hello")
 	public String sayHello() {
-		return "Hello, world! - second version";
+		return "Hello, world! - third version";
 	}
 }
