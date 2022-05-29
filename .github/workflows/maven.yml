@@ -23,7 +23,9 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn -B install --file pom.xml
+      run: |
+        mvn -B install --file pom.xml
+        cp ./target/ssh-example-0.0.1-SNAPSHOT.jar .
 
     - name: deploy
       uses: appleboy/scp-action@master
@@ -32,6 +34,6 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: 22
-        source: "./target/ssh-example-0.0.1-SNAPSHOT.jar"
+        source: "ssh-example-0.0.1-SNAPSHOT.jar"
         target: "/app/manual/"
         
